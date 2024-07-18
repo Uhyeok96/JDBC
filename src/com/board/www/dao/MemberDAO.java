@@ -34,18 +34,19 @@ public class MemberDAO {
 			// service에서 키보드로 입력받은 pw가 두번째 ? 에 적용
 			preparedStatement.setString(3, joinMemberDTO.getMnickname());
 			// service에서 키보드로 입력받은 nickname가 세번째 ? 에 적용
-			int result;
-			result = preparedStatement.executeUpdate();
+			//int result;
+			//result = preparedStatement.executeUpdate();
+			preparedStatement.executeUpdate();
 
-			if (result > 0) {
-				System.out.println(result + "행이 추가 되었습니다.");
-				System.out.println("회원가입이 완료되었습니다.");
-				connection.commit(); // 저장
-			} else {
-				System.out.println("결과 : " + result + " 입니다.");
-				System.out.println("회원가입에 실패했습니다. 롤백됩니다.");
-				connection.rollback(); // 전 단계로 롤백 (회원가입에 실패)
-			}
+//			if (result > 0) {
+//				System.out.println(result + "행이 추가 되었습니다.");
+//				System.out.println("회원가입이 완료되었습니다.");
+//				connection.commit(); // 저장
+//			} else {
+//				System.out.println("결과 : " + result + " 입니다.");
+//				System.out.println("회원가입에 실패했습니다. 롤백됩니다.");
+//				connection.rollback(); // 전 단계로 롤백 (회원가입에 실패)
+//			}
 
 			preparedStatement.close();
 
@@ -108,21 +109,24 @@ public class MemberDAO {
 			// service에서 키보드로 입력받은 nickname가 세번째 ? 에 적용
 			preparedStatement.setString(4, loginMember.getMid());
 			// service에서 키보드로 입력받은 id가 네번째 ? 에 적용
-			int result = 0;
-			result = preparedStatement.executeUpdate();
-
-			if (result > 0) {
-				System.out.println(result + "행 실행이 완료되었습니다.");
-				System.out.println("회원 정보 수정 완료! 저장됩니다!!");
-				connection.commit();
-			} else {
-				System.out.println("결과 : " + result + " 입니다.");
-				System.out.println("회원 정보 수정 실패! 롤백됩니다!!");
-				connection.rollback();
-			}
+//			int result = 0;
+//			result = preparedStatement.executeUpdate();
+			preparedStatement.executeUpdate();
+//
+//			if (result > 0) {
+//				System.out.println(result + "행 실행이 완료되었습니다.");
+//				System.out.println("회원 정보 수정 완료! 저장됩니다!!");
+//				connection.commit();
+//			} else {
+//				System.out.println("결과 : " + result + " 입니다.");
+//				System.out.println("회원 정보 수정 실패! 롤백됩니다!!");
+//				connection.rollback();
+//			}
+			System.out.println("회원 정보 수정 완료!");
 			preparedStatement.close();
 		} catch (SQLException e) {
 			System.out.println("관리자 : sql문을 확인하세요");
+			System.out.println("회원 정보 수정 실패, 다시 시도해주세요");
 			// e.printStackTrace();
 		}
 
@@ -134,18 +138,19 @@ public class MemberDAO {
 			String sql = "delete from member where mid = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginMember.getMid());
-			int result;
-			result = preparedStatement.executeUpdate();
+			//int result;
+			//result = preparedStatement.executeUpdate();
+			preparedStatement.executeUpdate();
 
-			if (result > 0) {
-				System.out.println(result + "행이 실행되었습니다");
-				System.out.println("삭제 완료! 저장됩니다.");
-				connection.commit();
-			} else {
-				System.out.println("결과 : " + result + " 입니다.");
-				System.out.println("삭제 실패! 롤백됩니다.");
-				connection.rollback();
-			}
+//			if (result > 0) {
+//				System.out.println(result + "행이 실행되었습니다");
+//				System.out.println("삭제 완료! 저장됩니다.");
+//				connection.commit();
+//			} else {
+//				System.out.println("결과 : " + result + " 입니다.");
+//				System.out.println("삭제 실패! 롤백됩니다.");
+//				connection.rollback();
+//			}
 
 		} catch (SQLException e) {
 			System.out.println("관리자 : sql문을 확인하세요");

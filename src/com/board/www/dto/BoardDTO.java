@@ -24,8 +24,17 @@ public class BoardDTO {
 		this.bcontent = bcontent;
 		this.bwriter = bwriter;
 		this.bdate = bdate;
-	}// insert, select 활용
+	}// insert, select 활용 커스텀 생성자
 	
+
+	public BoardDTO(String createTitle, String createContent) {
+		this.btitle = createTitle;
+		this.bcontent = createContent;
+	} // 게시물 생성 커스텀 생성자
+
+	public BoardDTO(String mid) {
+		this.bwriter = mid;
+	} // 커스텀 생성자
 
 	// 메서드 (게터, 세터)
 	public int getBno() {

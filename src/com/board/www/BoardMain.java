@@ -59,7 +59,7 @@ public class BoardMain {
 			case 2:
 				System.out.println("게시판 서비스로 진입합니다.");
 				BoardService boardService = new BoardService();
-				boardService.list(connection);
+				boardService.menu(scanner, connection, loginMember);
 				break;
 			case 3:
 				System.out.println("대나무숲을 종료합니다.");

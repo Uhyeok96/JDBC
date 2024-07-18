@@ -12,7 +12,7 @@ drop sequence board_seq; -- 기본 자동생성번호 삭제
 create sequence board_seq increment by 1 start with 1 nocycle nocache;
 
 insert into BOARD (bno, btitle, bcontent, bwriter, bdate)
-	values (board_seq.nextval, '후기입니다.', '비오는데 등교하시는냐고 고생 하셨습니다.', '김기원', to_timestamp('2024-07-01 17:55:10', 'yyyy-mm-dd hh24:mi:ss'));
+	values (board_seq.nextval, '후기입니다.', '비오는데 등교하시는냐고 고생 하셨습니다.', '김우혁', to_timestamp('2024-07-01 17:55:10', 'yyyy-mm-dd hh24:mi:ss'));
 insert into BOARD (bno, btitle, bcontent, bwriter, bdate)
 	values (board_seq.nextval, '싱글룸 후기남겨요', '비오는데 등교하시는냐고 고생 하셨습니다.', '김기원', sysdate);
 insert into BOARD (bno, btitle, bcontent, bwriter, bdate)
